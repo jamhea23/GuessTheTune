@@ -1,0 +1,18 @@
+{
+    "songs" : [{
+        "title": "Hello Signals",
+        "song_link": "./assets/audio/Hello_Signals.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=WEYTjr4z70o"
+    },
+    {
+        "title": "RuLe",
+        "song_link": "./assets/audio/RuLe.mp3",
+        "answer_link": "https://youtu.be/0Z_YqhYHhpg?si=IxvpkfrorKPdplZL"
+    },
+    {
+        "title": "unravel",
+        "song_link": "./assets/audio/unravel.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=eZuDklxsaRg&pp=0gcJCa0JAYcqIYzv"
+    }
+]
+}
