@@ -13,6 +13,196 @@
         "title": "unravel",
         "song_link": "./assets/audio/unravel.mp3",
         "answer_link": "https://www.youtube.com/watch?v=eZuDklxsaRg&pp=0gcJCa0JAYcqIYzv"
+    },
+    {
+        "title": "Backlight",
+        "song_link": "./assets/audio/Backlight.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=gt-v_YCkaMY&pp=0gcJCa0JAYcqIYzv"
+    },
+    {
+        "title": "Kagashuku",
+        "song_link": "./assets/audio/Kagakushu.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=55W2LxbQoHc"
+         
+    },
+    {
+        "title": "Aishite Aishite Aishite",
+        "song_link": "./assets/audio/Aishite_Aishite_Aishite.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=A7FRtZXoXlQ"
+         
+         
+    },
+    {
+        "title": "Freedom",
+        "song_link":"./assets/audio/Freedom.mp3",
+        "answer_link":"https://www.youtube.com/watch?v=hgyGhu49sGc"
+         
+    },
+    {
+        "title": "ROCKSTAR",
+        "song_link": "./assets/audio/ROCKSTAR.mp3",
+        "answer_link":"https://www.youtube.com/watch?v=hRJpiCZlLX8"
+    },
+     {
+        "title": "Gira Gira",
+         "song_link": "./assets/audio/Gira_Gira.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=sOiMD45QGLs"
+    },
+    {
+        "title": "Odo",
+         "song_link": "./assets/audio/Odo.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=YnSW8ian29w"
+    },
+    {
+        "title": "Sakuri Biyori and Time Machine with Hatsume Miku",
+         "song_link": "./assets/audio/Sakura_Biyori_and_Time_Machine_with_Hatsune_Miku.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=nIWZfhpnq6M"
+    },
+    {
+        "title": "Rebellion",
+         "song_link": "./assets/audio/Rebellion.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=0Y8e0LJf0i0"
+    },
+    {
+        "title": "All Night Radio",
+         "song_link":"./assets/audio/All_Night_Radio.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=lfw8W3uWO7s"
+    },
+    {
+        "title": "Show",
+         "song_link": "./assets/audio/Show.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=pgXpM4l_MwI"
+    },
+    {
+        "title": "New Genesis",
+         "song_link": "./assets/audio/New_Genesis.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=1FliVTcX8bQ"
+    },
+    {
+        "title": "I'm a Controversy",
+         "song_link": "./assets/audio/I’m_a_Controversy.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=lZGo8jcEW2M"
+    },
+      {
+        "title": "Kura Kura",
+         "song_link":"./assets/audio/Kura_Kura.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=W_fHWaoQwkw"
+    },
+     {
+        "title": "Ibara",
+         "song_link":"./assets/audio/Ibara.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=oy2WTnhVT2w"
+    },
+     {
+        "title": "KokoroToIuNaNoFukakai",
+         "song_link":"./assets/audio/KokoroToIuNaNoFukakai.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=BMb5IetESGE"
+    },
+     {
+        "title": "Elf",
+         "song_link": "./assets/audio/Elf.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=SbxR25brgoE"
+    },
+    {
+        "title": "Eien No Akuruhi",
+         "song_link": "./assets/audio/Eien_No_Akuruhi.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=ZHAnZTVF_10"
+    },
+     {
+        "title": "Tot Musica",
+         "song_link":"./assets/audio/Tot_Musica.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=V9_ZpqfqHFI"
+    },
+      {
+        "title": "MIRROR",
+         "song_link": "./assets/audio/MIRROR.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=zsBBWBEZkFQ"
+    },
+    {
+        "title": "Readymade",
+         "song_link":"./assets/audio/Readymade.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=jg09lNupc1s&pp=ygUJcmVhZHltYWRl"
+    },
+    {
+        "title": "Himawari",
+         "song_link":"./assets/audio/Himawari.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=aOKa-5AHCtU"
+    },
+    {
+        "title": "I'm invincible",
+         "song_link": "./assets/audio/I’m_invincible.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=sk1Z-Hqwwog"
+    },
+    {
+        "title": "Usseewa",
+         "song_link": "./assets/audio/Usseewa.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=Qp3b-RXtz4w"
+    },
+    {
+        "title": "Fleeting Lullaby",
+         "song_link": "./assets/audio/Fleeting_Lullaby.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=hyV1AJiFNyo"
+    },
+    {
+        "title": "Episode X",
+         "song_link": "./assets/audio/Episode_X.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=9dKZeL2UbUM&pp=0gcJCa0JAYcqIYzv"
+    },
+    {
+        "title": "Ashura-chan",
+         "song_link":"./assets/audio/Ashura-chan.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=cyq5-StPISU"
+    },
+    {
+        "title": "Aitakute",
+         "song_link":"./assets/audio/Aitakute.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=jTVSU-Lr1ew"
+    },
+     {
+        "title": "Chocolat Cadabra",
+         "song_link": "./assets/audio/Chocolat_Cadabra.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=c5j7lpWprro"
+    },
+     {
+        "title": "Boquet for Me",
+         "song_link": "./assets/audio/Bouquet_for_Me.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=_RAffg8JQ6g"
+    },
+    {
+        "title": "missing",
+         "song_link":"./assets/audio/missing.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=VQtmqpSE64w"
+    },
+     {
+        "title": "Motherland",
+         "song_link": "./assets/audio/Motherland.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=_wZfYtYwxro"
+    },
+    {
+        "title": "Value",
+         "song_link": "./assets/audio/Value.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=5iAQF_q6FSk"
+    },
+    {
+        "title": "DIGNITY",
+         "song_link": "./assets/audio/DIGNITY.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=Q9X0J_tLHwY&pp=0gcJCa0JAYcqIYzv"
+    },
+    {
+        "title": "Lucky Bruto",
+         "song_link": "./assets/audio/Lucky_Bruto.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=u-G_zzhLSy8&pp=0gcJCa0JAYcqIYzv"
+    },
+    {
+        "title": "Yoru No Pierrot",
+         "song_link": "./assets/audio/Yoru_No_Pierrot.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=cSgZxz3le7s"
+    },
+    {
+        "title": "Shoka",
+         "song_link": "./assets/audio/Shoka.mp3",
+        "answer_link": "https://www.youtube.com/watch?v=GORsp0gc2Nc"
     }
+
 ]
 }
