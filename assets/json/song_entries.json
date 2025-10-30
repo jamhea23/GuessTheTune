@@ -202,6 +202,91 @@
         "title": "Shoka",
          "song_link": "./assets/audio/Shoka.mp3",
         "answer_link": "https://www.youtube.com/watch?v=GORsp0gc2Nc"
+    },
+     {
+        "title": "Domestic De Violence",
+         "song_link": "./assets/audio/Domestic_De_Violence.mp3",
+        "answer_link": "https://youtu.be/iRMYLKIWyUk?si=gml1t2iYZjp4Mqh6"
+    },
+     {
+        "title": "Fireworks",
+         "song_link": "./assets/audio/Fireworks.mp3",
+        "answer_link": "https://youtu.be/5_-TcIOxm60?si=vu1eqGn-S_t50spK"
+    },
+    {
+        "title": "The World's Continuation",
+         "song_link": "./assets/audio/The_Worlds_Continuation.mp3",
+        "answer_link": "https://youtu.be/b3GCfyNKeLs?si=xlWcxUz9HlzRJMcc"
+    },
+    {
+        "title": "Where the Wind Blows",
+         "song_link": "./assets/audio/Where_the_Wind_Blows.mp3",
+        "answer_link": "https://youtu.be/Z-WdGYi9Pv4?si=f5HXitUPVz01Z2A_"
+    },
+      {
+        "title": "BINKUSUNO SAKE",
+         "song_link": "./assets/audio/BINKUSUNO_SAKE.mp3",
+        "answer_link": "https://youtu.be/Z-WdGYi9Pv4?si=yoHuOyhTuoQdjRLm"
+    },
+      {
+        "title": "Dried Flowers",
+         "song_link": "./assets/audio/Dried_Flowers.mp3",
+        "answer_link": "https://youtu.be/qhmrt3ZNgcs?si=FysxTR-AvBJiPIjD"
+    },
+     {
+        "title": "Kazarijyanainoyonamidawa",
+         "song_link": "./assets/audio/Kazarijyanainoyonamidawa.mp3",
+        "answer_link": "https://youtu.be/Mtfkq7doqWw?si=XRwbui3cXsOWOhrR"
+    },
+     {
+        "title": "Crime And Punishment ",
+         "song_link": "./assets/audio/Crime_and_Punishment.mp3",
+        "answer_link": "https://youtu.be/x1UsJ2Znjk0?si=jX7Ziom2MK_en2FJ"
+    },
+     {
+        "title": "Kawaikute Gomen",
+         "song_link": "./assets/audio/Kawaikute_Gomen.mp3",
+        "answer_link": "https://youtu.be/axOhZD3boe8?si=yljNx12J51jqvozA"
+    },
+     {
+        "title": "Villain",
+         "song_link": "./assets/audio/Villain.mp3",
+        "answer_link": "https://youtu.be/r_wO7xKI-tw?si=5_GjdiFkvo1zybWJ"
+    },
+    {
+        "title": "God-ish",
+         "song_link": "./assets/audio/God-ish.mp3",
+        "answer_link": "https://youtu.be/7i_nc5GGIsI?si=yg1cVNpg1VrbcvwD"
+    },
+     {
+        "title": "Buriki No Dance",
+         "song_link": "./assets/audio/Buriki_no_Dance.mp3",
+        "answer_link": "https://youtu.be/iL7uoLCbJoc?si=F2wf-2R3fi0wIz7t"
+    },
+     {
+        "title": "Dawn and Fireflies",
+         "song_link": "./assets/audio/Dawn_and_Fireflies.mp3",
+        "answer_link": "https://youtu.be/1T6b26DTQy4?si=B9n-6BMW6Qm5wmEF"
+    },
+    {
+        "title": "Nukegara",
+         "song_link": "./assets/audio/Nukegara.mp3",
+        "answer_link": "https://youtu.be/JpnqXqy-XMg?si=M_9fM9_pbKMOHGRm"
+    },
+     {
+        "title": "0",
+         "song_link": "./assets/audio/0.mp3",
+        "answer_link": "https://youtu.be/8vm3Tkv43jw?si=PJakUVG74FJg4yam"
+    },
+    {
+        "title": "The Story of the Wind and I",
+         "song_link": "./assets/audio/The_Story_of_the_Wind_and_I.mp3",
+        "answer_link": "https://youtu.be/oAuKa5NOzWE?si=iyFtzwZyF04SSSY4"
+    },
+     {
+        "title": "MAGIC",
+         "song_link": "",
+        "answer_link": "https://youtu.be/l0WArCNh6G0?si=ZvfDKFa5ynqCvboA"
     }
 
 ]
