@@ -102,6 +102,8 @@ function startGame() {
     console.log("Picked index:", idx, "Title:", song.title);
 
     audioSlicer(song.song_link, 5); // loads a 5s slice
+    buildQuizChoices(songs, idx);
+    console.log(test);
   });
 }
 
@@ -367,7 +369,7 @@ setVolume();
 function resetGame() {
   // manage buttons
   $("#newGameBtn").hide();
-  $("#showAnswerBtn").show();
+  // $("#showAnswerBtn").show();
 
   ensureSongs(function (songs) {
     if (!songs.length) return;
@@ -397,6 +399,7 @@ function resetGame() {
     audioSlicer(song.song_link, 5);
 
     console.log("Game reset to start. First pick:", idx, song.title);
+    buildQuizChoices(songs, idx);
   });
 }
 
@@ -414,6 +417,7 @@ function nextSong(sliceSeconds = 5) {
     // Load a slice (no autoplay). If not slicing, do:
     // $("#songPlayer").attr("src", song.song_link).trigger("load");
     audioSlicer(song.song_link, sliceSeconds);
+    buildQuizChoices(songs, idx);
   });
 }
 
@@ -557,5 +561,97 @@ function buildYouTubeEmbed(link) {
       parseInt(m[2] || 0) * 60 +
       parseInt(m[3] || 0)
     );
+  }
+}
+
+function buildQuizChoices(songs, correctIndex) {
+  const container = $("#choicesContainer");
+  const feedback = $("#quizFeedback");
+  container.empty();
+  feedback.text("");
+  const correctSong = songs[correctIndex];
+
+  // Pick 2 random wrong songs
+  const wrongIndices = [];
+  while (wrongIndices.length < 2) {
+    const r = Math.floor(Math.random() * songs.length);
+    if (r !== correctIndex && !wrongIndices.includes(r)) wrongIndices.push(r);
+  }
+
+  const choices = shuffle([
+    { title: correctSong.title, correct: true },
+    { title: songs[wrongIndices[0]].title, correct: false },
+    { title: songs[wrongIndices[1]].title, correct: false },
+  ]);
+
+  console.log(choices);
+
+  // Build buttons
+  for (const c of choices) {
+    const btn = $("<button>")
+      .addClass("btn btn-outline-success mb-2")
+      .text(c.title)
+      .on("click", function () {
+        handleAnswer(c.correct, $(this)); // 👈 pass clicked button
+      });
+    container.append(btn);
+  }
+
+  $("#quizArea").show();
+}
+
+function handleAnswer(isCorrect, clickedButton) {
+  const feedback = $("#quizFeedback");
+  $("#choicesContainer button").off("click").css("pointer-events", "none"); // prevent re-clicks
+
+  if (isCorrect) {
+    // feedback.text("✅ Correct!").css("color", "green");
+    //add popper
+    //add congratulations audio
+    console.log(clickedButton);
+    clickedButton
+      .removeClass()
+      .addClass("btn btn-success mb-2")
+      .prepend('<i class="fa-solid fa-circle-check"></i> ');
+
+    playCorrectSound();
+    showAnswer();
+  } else {
+    clickedButton
+      .removeClass()
+      .addClass("btn btn-danger mb-2")
+      .prepend('<i class="fa-solid fa-circle-xmark"></i> ');
+    playWrongSound();
+    showAnswer();
+    // feedback.text("❌ Wrong!").css("color", "red");
+  }
+
+  // Show next button after a short delay
+  setTimeout(() => {
+    $("#nextSongBtn").show();
+  }, 1000);
+}
+
+function playCorrectSound() {
+  try {
+    let audio = new Audio("assets/sfx/correct.mp3");
+
+    audio.currentTime = 0; // restart if played recently
+    audio.volume = 1.0; // set volume (0.0–1.0)
+    audio.play().catch((err) => console.warn("Audio play failed:", err));
+  } catch (err) {
+    console.error("Failed to play correct sound:", err);
+  }
+}
+
+function playWrongSound() {
+  try {
+    let audio = new Audio("assets/sfx/vine-boom.mp3");
+
+    audio.currentTime = 0; // restart if played recently
+    audio.volume = 1.0; // set volume (0.0–1.0)
+    audio.play().catch((err) => console.warn("Audio play failed:", err));
+  } catch (err) {
+    console.error("Failed to play correct sound:", err);
   }
 }

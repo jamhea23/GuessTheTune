@@ -54,7 +54,7 @@
         "answer_link": "https://www.youtube.com/watch?v=YnSW8ian29w"
     },
     {
-        "title": "Sakuri Biyori and Time Machine with Hatsume Miku",
+        "title": "Sakuri Biyori and Time Machine with Hatsune Miku",
          "song_link": "./assets/audio/Sakura_Biyori_and_Time_Machine_with_Hatsune_Miku.mp3",
         "answer_link": "https://www.youtube.com/watch?v=nIWZfhpnq6M"
     },
@@ -282,11 +282,6 @@
         "title": "The Story of the Wind and I",
          "song_link": "./assets/audio/The_Story_of_the_Wind_and_I.mp3",
         "answer_link": "https://youtu.be/oAuKa5NOzWE?si=iyFtzwZyF04SSSY4"
-    },
-     {
-        "title": "MAGIC",
-         "song_link": "",
-        "answer_link": "https://youtu.be/l0WArCNh6G0?si=ZvfDKFa5ynqCvboA"
     }
 
 ]
