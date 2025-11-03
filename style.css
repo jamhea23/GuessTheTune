@@ -187,6 +187,10 @@ body {
   font-size: 20px;
 }
 
+#answerFrame {
+  border-radius: 12px;
+}
+
 /* Hide the time duration display in the default browser audio controls */
 audio::-webkit-media-controls-time-remaining-display,
 audio::-webkit-media-controls-current-time-display {
