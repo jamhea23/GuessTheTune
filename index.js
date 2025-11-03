@@ -565,9 +565,13 @@ function handleAnswer(isCorrect, clickedButton) {
   }
 
   // Show next button after a short delay
-  setTimeout(() => {
-    $("#nextSongBtn").show();
-  }, 1000);
+  if ($("#remaining").text().trim() === "0") {
+    $("#nextSongBtn").hide();
+  } else {
+    setTimeout(() => {
+      $("#nextSongBtn").show();
+    }, 1000);
+  }
 }
 
 function playCorrectSound() {
