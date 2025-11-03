@@ -553,7 +553,7 @@ function handleAnswer(isCorrect, clickedButton) {
     updateScoreDisplay();
     showAnswer();
     // ✅ Check if player reached 3 points
-    if (score === 3) {
+    if (score === 5) {
       showContinueModal();
       return; // stop here until user chooses
     }
