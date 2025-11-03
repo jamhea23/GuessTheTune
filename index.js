@@ -1,8 +1,31 @@
 const STORAGE_KEY = "songGame.drawBag.v1";
+const SCORE_KEY = "songGame.score.v1";
 
 let drawBag = []; // remaining indices (persisted)
 let songsCache = []; // loaded from JSON
 let currentIndex = null;
+let score = 0; //global score tracker
+
+// SCORE SYSTEM FUNCTIONS
+function saveScore() {
+  localStorage.setItem(SCORE_KEY, score);
+}
+
+function loadScore() {
+  const saved = localStorage.getItem(SCORE_KEY);
+  score = saved ? parseInt(saved, 10) || 0 : 0;
+  updateScoreDisplay();
+}
+
+function resetScore() {
+  score = 0;
+  saveScore();
+  updateScoreDisplay();
+}
+
+function updateScoreDisplay() {
+  $("#score").text(score);
+}
 
 // Fisher–Yates shuffle
 function shuffle(arr) {
@@ -50,7 +73,14 @@ function loadState(total) {
 }
 
 function syncNextVisibility(remaining) {
-  $("#nextSongBtn").toggle(remaining > 0); // show only if there are songs left
+  const btn = $("#nextSongBtn");
+  if (remaining > 0) {
+    btn.prop("disabled", false).show();
+    $("#newGameBtn2").hide();
+  } else {
+    btn.hide();
+    $("#newGameBtn2").show();
+  }
 }
 
 function updateCounter(total, remaining) {
@@ -106,126 +136,6 @@ function startGame() {
     console.log(test);
   });
 }
-
-// Initialize counter on page load (restores state if present)
-// ensureSongs(() => {
-//   /* counter set via loadState/refillDrawBag */
-// });
-
-// $("#playRandomBtn").on("click", startGame);
-
-// Optional: provide a manual reset (uncomment to add a button)
-// function resetGame() {
-//   if (!songsCache.length) return;
-//   refillDrawBag(songsCache.length);
-// }
-
-// function audioSlicer(songUrl, seconds = 5) {
-//   const player = document.getElementById("songPlayer");
-
-//   fetch(songUrl)
-//     .then((res) => res.arrayBuffer())
-//     .then((arrayBuffer) => {
-//       const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-//       return audioCtx.decodeAudioData(arrayBuffer);
-//     })
-//     .then((audioBuffer) => {
-//       // Slice first `seconds`
-//       const cutSamples = Math.min(
-//         Math.floor(seconds * audioBuffer.sampleRate),
-//         audioBuffer.length
-//       );
-
-//       // Keep mono (like your original). If you want stereo, say the word.
-//       const channelData = audioBuffer.getChannelData(0).slice(0, cutSamples);
-//       const newBuffer = new AudioBuffer({
-//         length: channelData.length,
-//         numberOfChannels: 1,
-//         sampleRate: audioBuffer.sampleRate,
-//       });
-//       newBuffer.copyToChannel(channelData, 0);
-
-//       // Render to an AudioBuffer we can encode
-//       const offlineCtx = new OfflineAudioContext(
-//         1,
-//         newBuffer.length,
-//         newBuffer.sampleRate
-//       );
-//       const source = offlineCtx.createBufferSource();
-//       source.buffer = newBuffer;
-//       source.connect(offlineCtx.destination);
-//       source.start();
-//       return offlineCtx.startRendering();
-//     })
-//     .then((renderedBuffer) => {
-//       // Encode to WAV (same as your function)
-//       function encodeWAV(audioBuffer) {
-//         const numOfChan = audioBuffer.numberOfChannels;
-//         const length = audioBuffer.length * numOfChan * 2 + 44;
-//         const buffer = new ArrayBuffer(length);
-//         const view = new DataView(buffer);
-
-//         function writeString(view, offset, string) {
-//           for (let i = 0; i < string.length; i++)
-//             view.setUint8(offset + i, string.charCodeAt(i));
-//         }
-
-//         let offset = 0;
-//         writeString(view, offset, "RIFF");
-//         offset += 4;
-//         view.setUint32(offset, length - 8, true);
-//         offset += 4;
-//         writeString(view, offset, "WAVE");
-//         offset += 4;
-//         writeString(view, offset, "fmt ");
-//         offset += 4;
-//         view.setUint32(offset, 16, true);
-//         offset += 4;
-//         view.setUint16(offset, 1, true);
-//         offset += 2;
-//         view.setUint16(offset, numOfChan, true);
-//         offset += 2;
-//         view.setUint32(offset, audioBuffer.sampleRate, true);
-//         offset += 4;
-//         view.setUint32(offset, audioBuffer.sampleRate * numOfChan * 2, true);
-//         offset += 4;
-//         view.setUint16(offset, numOfChan * 2, true);
-//         offset += 2;
-//         view.setUint16(offset, 16, true);
-//         offset += 2;
-//         writeString(view, offset, "data");
-//         offset += 4;
-//         view.setUint32(offset, length - offset - 4, true);
-//         offset += 4;
-
-//         const channels = [];
-//         for (let i = 0; i < numOfChan; i++)
-//           channels.push(audioBuffer.getChannelData(i));
-
-//         let pos = offset;
-//         for (let i = 0; i < audioBuffer.length; i++) {
-//           for (let c = 0; c < numOfChan; c++) {
-//             const s = Math.max(-1, Math.min(1, channels[c][i]));
-//             view.setInt16(pos, s < 0 ? s * 0x8000 : s * 0x7fff, true);
-//             pos += 2;
-//           }
-//         }
-//         return buffer;
-//       }
-
-//       const wavBuffer = encodeWAV(renderedBuffer);
-//       const blob = new Blob([wavBuffer], { type: "audio/wav" });
-//       const url = URL.createObjectURL(blob);
-
-//       // Set sliced audio as the source (no autoplay)
-//       player.pause();
-//       player.src = url;
-//       player.load();
-//     })
-//     .catch((err) => {
-//       console.error("[audioSlicer] Failed to slice:", err);
-//     });
-// }
 
 function audioSlicer(songUrl, seconds = 5) {
   const player = document.getElementById("songPlayer");
@@ -365,10 +275,17 @@ function setVolume() {
 
 // audioSlicer();
 setVolume();
+score = 0;
+saveScore();
+updateScoreDisplay();
 
 function resetGame() {
   // manage buttons
+  $("#scoreBoard").show();
   $("#newGameBtn").hide();
+  $("#counter").show();
+  $("#audioPlayerContainer").show();
+  // $("#songPlayer").show();
   // $("#showAnswerBtn").show();
 
   ensureSongs(function (songs) {
@@ -398,12 +315,15 @@ function resetGame() {
     // $("#songPlayer").attr("src", song.song_link).trigger("load");
     audioSlicer(song.song_link, 5);
 
+    resetScore();
+
     console.log("Game reset to start. First pick:", idx, song.title);
     buildQuizChoices(songs, idx);
   });
 }
 
 $("#newGameBtn").on("click", resetGame);
+$("#newGameBtn2").on("click", resetGame);
 
 function nextSong(sliceSeconds = 5) {
   ensureSongs(function (songs) {
@@ -419,6 +339,8 @@ function nextSong(sliceSeconds = 5) {
     audioSlicer(song.song_link, sliceSeconds);
     buildQuizChoices(songs, idx);
   });
+
+  $("#answerFrame").attr("src", "");
 }
 
 $("#nextSongBtn").on("click", nextSong);
@@ -466,9 +388,9 @@ function showAnswer() {
     $("#answerFrame").attr("src", embedSrc || "");
     $("#openInNewTab").attr("href", raw || "#");
 
-    const el = document.getElementById("answerModal");
-    const modal = bootstrap.Modal.getOrCreateInstance(el);
-    modal.show();
+    // const el = document.getElementById("answerModal");
+    // const modal = bootstrap.Modal.getOrCreateInstance(el);
+    // modal.show();
   });
 }
 
@@ -589,7 +511,7 @@ function buildQuizChoices(songs, correctIndex) {
   // Build buttons
   for (const c of choices) {
     const btn = $("<button>")
-      .addClass("btn btn-outline-success mb-2")
+      .addClass("choiceBtn mb-3 w-100")
       .text(c.title)
       .on("click", function () {
         handleAnswer(c.correct, $(this)); // 👈 pass clicked button
@@ -610,16 +532,23 @@ function handleAnswer(isCorrect, clickedButton) {
     //add congratulations audio
     console.log(clickedButton);
     clickedButton
-      .removeClass()
-      .addClass("btn btn-success mb-2")
+      .addClass("correctChoice")
       .prepend('<i class="fa-solid fa-circle-check"></i> ');
 
     playCorrectSound();
+
+    score += 1; // ✅ Increase score for correct answers
+    saveScore();
+    updateScoreDisplay();
     showAnswer();
+    // ✅ Check if player reached 3 points
+    if (score === 3) {
+      showContinueModal();
+      return; // stop here until user chooses
+    }
   } else {
     clickedButton
-      .removeClass()
-      .addClass("btn btn-danger mb-2")
+      .addClass("wrongChoice")
       .prepend('<i class="fa-solid fa-circle-xmark"></i> ');
     playWrongSound();
     showAnswer();
@@ -655,3 +584,42 @@ function playWrongSound() {
     console.error("Failed to play correct sound:", err);
   }
 }
+
+function showContinueModal() {
+  const modalEl = document.getElementById("continueModal");
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+}
+
+$("#continueYesBtn").on("click", function () {
+  const modal = bootstrap.Modal.getInstance(
+    document.getElementById("continueModal")
+  );
+  modal.hide();
+
+  // Continue playing — no reset needed
+  $("#nextSongBtn").show();
+});
+
+$("#continueNoBtn").on("click", function () {
+  const modal = bootstrap.Modal.getInstance(
+    document.getElementById("continueModal")
+  );
+  modal.hide();
+  location.reload();
+});
+
+$("#startGameBtn").on("click", function () {
+  const btn = $(this);
+
+  // Add pressed class
+  btn.addClass("pressed");
+
+  // Remove pressed class after animation
+  setTimeout(() => {
+    btn.removeClass("pressed");
+  }, 150);
+
+  resetGame();
+  btn.hide();
+});

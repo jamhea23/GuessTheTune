@@ -1,5 +1,190 @@
+:root {
+  --primary-bg-color: #edf9fc;
+  --accent-bg-color: #8bd0dd;
+  --primary-color: #ffffff;
+  --secondary-color: #777777;
+  --button-border-color: #4b5e7a;
+  --button-bg-color: #9bbbe8;
+  --choice-border-color: #91dea9;
+}
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: monospace !important;
+  background-color: var(--primary-bg-color) !important;
+}
+
+#navbar {
+  background-color: var(--accent-bg-color);
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+#headline {
+  border: 3px solid var(--accent-bg-color);
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#startGameBtn {
+  border: 3px solid var(--button-border-color);
+  border-radius: 12px;
+  background: var(--button-bg-color);
+  color: var(--button-border-color);
+  box-shadow: var(--button-border-color) 0px 6px 0px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#startGameBtn:active {
+  transform: scale(0.95);
+}
+
+#startGameBtn.pressed {
+  transform: scale(0.95);
+}
+
+#scoreBoard {
+  border: 3px solid #efc128;
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: #efa42b;
+}
+
+#score {
+  color: #efa42b;
+  font-size: 48px;
+}
+
+.choiceBtn {
+  border: 3px solid var(--choice-border-color);
+  border-radius: 12px;
+  box-shadow: var(--choice-border-color) 0px 6px 0px;
+  padding: 2px;
+  color: var(--choice-border-color);
+  background-color: var(--primary-bg-color);
+  font-size: 20px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.choiceBtn:hover {
+  border: 3px solid #5ca072;
+  background-color: var(--choice-border-color);
+  color: var(--primary-color);
+  box-shadow: #5ca072 0px 6px 0px;
+}
+
+.choiceBtn:active {
+  transform: scale(0.95);
+}
+
+.choiceBtn.pressed {
+  transform: scale(0.95);
+}
+
+.correctChoice {
+  border: 3px solid #5ca072;
+  background-color: var(--choice-border-color);
+  color: var(--primary-color);
+  box-shadow: #5ca072 0px 6px 0px;
+}
+
+.wrongChoice {
+  border: 3px solid #bd5555;
+  background-color: #e67272;
+  color: var(--primary-color);
+  box-shadow: #bd5555 0px 6px 0px;
+}
+
+#counter {
+  border: 3px solid #cda1dc;
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #f5f0fa;
+  color: #cda1dc;
+}
+
+#nextSongBtn {
+  border: 3px solid #e383a8;
+  border-radius: 12px;
+  box-shadow: #e383a8 0px 6px 0px;
+  color: #e383a8;
+  background-color: #fceff7;
+  font-size: 20px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#nextSongBtn:active {
+  transform: scale(0.95);
+}
+
+#nextSongBtn.pressed {
+  transform: scale(0.95);
+}
+
+#continueModalContent {
+  border: 3px solid var(--accent-bg-color);
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#continueYesBtn {
+  border: 3px solid #5ca072;
+  border-radius: 12px;
+  background-color: var(--choice-border-color);
+  color: var(--primary-color);
+  box-shadow: #5ca072 0px 6px 0px;
+}
+
+#continueNoBtn {
+  border: 3px solid #bd5555;
+  border-radius: 12px;
+  background-color: #e67272;
+  color: var(--primary-color);
+  box-shadow: #bd5555 0px 6px 0px;
+}
+
+#playBtn {
+  border: 3px solid var(--button-border-color);
+  border-radius: 12px;
+  background: var(--button-bg-color);
+  color: var(--button-border-color);
+  box-shadow: var(--button-border-color) 0px 6px 0px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#seekBarContainer {
+  border: 3px solid var(--accent-bg-color);
+  border-radius: 12px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#volumeBar {
+  cursor: pointer;
+}
+
+#muteBtn {
+  border: 3px solid #efc128;
+  border-radius: 12px;
+  background: #fffbe0;
+  color: #efc128;
+  box-shadow: #efc128 0px 6px 0px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 /* Hide the time duration display in the default browser audio controls */

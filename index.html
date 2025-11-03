@@ -24,53 +24,104 @@
   </head>
   <body>
     <header class="mb-3">
-      <nav class="navbar navbar-expand-lg bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Guess The Tune</a
-                >
-              </li>
-            </ul>
-          </div>
+      <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid d-flex justify-content-center">
+          <a class="navbar-brand m-0" href="#">Guess The Tune</a>
         </div>
       </nav>
     </header>
     <main class="container-fluid">
+      <div id="headline" class="mb-2 text-center">
+        Dive into Ado's world of music — test your knowledge and see if you can
+        name them all!
+      </div>
       <div>
-        <h1 class="text-center">Guess The Tune</h1>
-        <div class="text-center mb-3">
-          <img class="" alt="chando huh" src="./assets/images/chando_huh.png" />
+        <div class="text-center mb-3" id="startGameBtn">
+          <img
+            class="m-4"
+            style="width: 100px; height: auto"
+            alt="chando huh"
+            src="./assets/images/chando_huh.png"
+          />
+
+          <h2 class="fw-bold">
+            <i class="fa-solid fa-play"></i> Play Guess The Tune
+          </h2>
         </div>
-        <div class="mb-3 d-flex justify-content-center">
-          <audio id="songPlayer" controls preload="auto" src=""></audio>
-          <button id="nextSongBtn" class="btn btn-info" style="display: none">
-            <i class="fa-solid fa-forward-step"></i> Next Song
-          </button>
+
+        <audio
+          id="songPlayer"
+          controls
+          preload="auto"
+          src=""
+          style="display: none"
+        ></audio>
+
+        <div class="ratio ratio-16x9 mb-2">
+          <iframe
+            id="answerFrame"
+            src=""
+            title="Answer"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div id="audioPlayerContainer" style="display: none">
+          <div class="mb-3 d-flex">
+            <div
+              id="volumeControl"
+              class="d-flex align-items-center gap-2 me-2"
+            >
+              <button id="muteBtn" class="btn btn-dark">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+              <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+              />
+            </div>
+            <button id="playBtn" class="me-2">
+              <i class="fa-solid fa-play"></i> Play Song
+            </button>
+            <button id="nextSongBtn" class="" style="display: none">
+              <i class="fa-solid fa-forward-step"></i> Next Song
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-primary me-2"
+              id="newGameBtn2"
+              style="display: none"
+            >
+              <i class="fa-solid fa-play"></i> New Game
+            </button>
+          </div>
         </div>
       </div>
-      <div id="quizArea" class="mt-3">
-        <div id="choicesContainer" class="btn-group-vertical w-100"></div>
-        <div id="quizFeedback" class="mt-2 fw-bold"></div>
+      <div class="row">
+        <div class="col-4">
+          <div id="scoreBoard" class="text-center" style="display: none">
+            <strong><i class="fa-solid fa-star"></i> SCORE</strong>
+            <h1 id="score" class="fw-bold">0</h1>
+          </div>
+        </div>
+        <div class="col-8">
+          <div id="quizArea" class="mt-3">
+            <div id="choicesContainer" class="btn-group-vertical w-100"></div>
+            <div id="quizFeedback" class="mt-2 fw-bold"></div>
+          </div>
+        </div>
       </div>
       <div class="d-flex justify-content-center mb-3">
-        <button type="button" class="btn btn-primary me-2" id="newGameBtn">
-          <i class="fa-solid fa-play"></i> New Game
-        </button>
+        <!-- <button type="button" class="btn btn-primary me-2" id="newGameBtn">
+          <i class="fa-solid fa-play"></i> Play Guess The Tune
+        </button> -->
         <button
           id="showAnswerBtn"
           type="button"
@@ -87,8 +138,9 @@
           <i class="fa-solid fa-rotate-right"></i> Reset
         </button>
       </div>
-      <div id="counter" class="text-center">
-        Songs Remaining: <span id="remaining">—</span> /
+      <div id="counter" class="text-center mb-4" style="display: none">
+        <i class="fa-solid fa-music"></i> Songs Remaining:
+        <span id="remaining">—</span> /
         <span id="total">—</span>
       </div>
     </main>
@@ -130,10 +182,36 @@
       </div>
     </div>
 
+    <!-- Continue Modal -->
+    <div class="modal fade" id="continueModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div id="continueModalContent" class="modal-content text-center p-3">
+          <div class="modal-header border-0">
+            <h5 class="modal-title w-100">🎉 Great job!</h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              You've reached <strong style="color: #efa42b">3 points</strong>!
+              Would you like to continue playing?
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center border-0">
+            <button id="continueYesBtn">
+              Continue <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button id="continueNoBtn" class="">
+              End Game <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/vendors/jQuery-3.7.1/jquery-3.7.1.min.js"></script>
     <script src="./assets/vendors/bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="./index.js"></script>
+    <script src="./assets/js/audio-player.js"></script>
 
     <script>
       //initialization
