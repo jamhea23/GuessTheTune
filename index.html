@@ -49,13 +49,7 @@
           </h2>
         </div>
 
-        <audio
-          id="songPlayer"
-          controls
-          preload="auto"
-          src=""
-          style="display: none"
-        ></audio>
+        <audio id="songPlayer" controls preload="auto" src=""></audio>
 
         <div class="w-50 mx-auto my-2">
           <div class="ratio ratio-16x9 mb-2 d-flex justify-content-center">
@@ -88,6 +82,14 @@
                 value="1"
               />
             </div>
+            <div
+              class="spinner-border text-info mx-5"
+              id="loading"
+              role="status"
+              style="display: none"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
             <button id="playBtn" class="me-2">
               <i class="fa-solid fa-play"></i> Play Song
             </button>
@@ -95,14 +97,14 @@
               <i class="fa-solid fa-forward-step"></i> Next Song
             </button>
 
-            <button
+            <!-- <button
               type="button"
               class="btn btn-primary me-2"
               id="newGameBtn2"
               style="display: none"
             >
               <i class="fa-solid fa-play"></i> New Game
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

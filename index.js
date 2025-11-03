@@ -326,6 +326,7 @@ $("#newGameBtn").on("click", resetGame);
 $("#newGameBtn2").on("click", resetGame);
 
 function nextSong(sliceSeconds = 5) {
+  $("#playBtn").html('<i class="fa-solid fa-play"></i> Play Song');
   ensureSongs(function (songs) {
     if (!songs.length) return console.warn("No songs in JSON.");
 
@@ -341,6 +342,14 @@ function nextSong(sliceSeconds = 5) {
   });
 
   $("#answerFrame").attr("src", "");
+  $("#playBtn").hide();
+  $("#loading").show();
+  $("#nextSongBtn").prop("disabled", true);
+  setTimeout(function () {
+    $("#loading").hide();
+    $("#playBtn").show();
+    $("#nextSongBtn").prop("disabled", false);
+  }, 2000);
 }
 
 $("#nextSongBtn").on("click", nextSong);
