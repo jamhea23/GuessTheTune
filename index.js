@@ -320,6 +320,8 @@ function resetGame() {
     console.log("Game reset to start. First pick:", idx, song.title);
     buildQuizChoices(songs, idx);
   });
+
+  $("#volumeBar").val($("#songPlayer").volume);
 }
 
 $("#newGameBtn").on("click", resetGame);
