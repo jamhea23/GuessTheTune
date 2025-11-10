@@ -638,3 +638,9 @@ $("#startGameBtn").on("click", function () {
   resetGame();
   btn.hide();
 });
+
+function showInstructionsModal() {
+  const modalEl = document.getElementById("instructionsModal");
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+}

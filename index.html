@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess The Tune</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/chando_huh.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/images/chando_huh.png"
+    />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -57,16 +70,18 @@
           style="display: none"
         ></audio>
 
-        <div class="w-50 mx-auto my-2">
-          <div class="ratio ratio-16x9 mb-2 d-flex justify-content-center">
-            <iframe
-              id="answerFrame"
-              src=""
-              title="Answer"
-              loading="lazy"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+        <div class="row">
+          <div class="col-12 col-md-6 mx-auto my-2">
+            <div class="ratio ratio-16x9 mb-2 d-flex justify-content-center">
+              <iframe
+                id="answerFrame"
+                src=""
+                title="Answer"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
 
@@ -103,14 +118,14 @@
               <i class="fa-solid fa-forward-step"></i> Next Song
             </button>
 
-            <!-- <button
+            <button
               type="button"
               class="btn btn-primary me-2"
               id="newGameBtn2"
               style="display: none"
             >
-              <i class="fa-solid fa-play"></i> New Game
-            </button> -->
+              <i class="fa-solid fa-rotate-right"></i> New Game
+            </button>
           </div>
         </div>
       </div>
@@ -152,6 +167,14 @@
         <i class="fa-solid fa-music"></i> Songs Remaining:
         <span id="remaining">—</span> /
         <span id="total">—</span>
+      </div>
+
+      <div
+        class="bg-light"
+        id="instructionBtn"
+        onclick="showInstructionsModal()"
+      >
+        <i class="fa-solid fa-question fa-lg"></i>
       </div>
     </main>
 
@@ -212,6 +235,62 @@
             <button id="continueNoBtn" class="">
               End Game <i class="fa-solid fa-rotate-right"></i>
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div
+      class="modal fade"
+      id="instructionsModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div id="continueModalContent" class="modal-content text-center p-3">
+          <div class="modal-header border-0">
+            <h2 class="modal-title w-100 fw-bold">How It Works</h2>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex align-items-center">
+              <h1 class="text-left">
+                <span
+                  class="badge text-bg-secondary me-2"
+                  style="background-color: #efc128 !important"
+                  >1</span
+                >
+              </h1>
+              Play the intro of the song.
+            </div>
+            <div class="d-flex align-items-center">
+              <h1 class="text-left">
+                <span
+                  class="badge text-bg-secondary me-2"
+                  style="background-color: #5ca072 !important"
+                  >2</span
+                >
+              </h1>
+              Choose from the 3 choices below.
+            </div>
+            <div class="d-flex align-items-center">
+              <h1 class="text-left">
+                <span
+                  class="badge text-bg-secondary me-2"
+                  style="background-color: #e67272 !important"
+                  >3</span
+                >
+              </h1>
+              Get 5 points to claim the stamp!
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center border-0">
+            <!-- <button id="">
+              Continue <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button id="" class="">
+              End Game <i class="fa-solid fa-rotate-right"></i>
+            </button> -->
           </div>
         </div>
       </div>

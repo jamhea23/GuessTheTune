@@ -71,6 +71,7 @@ body {
   background-color: var(--primary-bg-color);
   font-size: 20px;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  animation: slideFromLeft 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 .choiceBtn:hover {
@@ -191,8 +192,54 @@ body {
   border-radius: 12px;
 }
 
+#newGameBtn2 {
+  border: 3px solid var(--button-border-color);
+  border-radius: 12px;
+  background: var(--button-bg-color);
+  color: var(--button-border-color);
+  box-shadow: var(--button-border-color) 0px 6px 0px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#instructionBtn {
+  border: 3px solid var(--accent-bg-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: var(--accent-bg-color);
+  border-radius: 50%; /* Makes it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1050;
+  transition: transform 0.2s ease-in-out;
+}
+
 /* Hide the time duration display in the default browser audio controls */
 audio::-webkit-media-controls-time-remaining-display,
 audio::-webkit-media-controls-current-time-display {
   display: none !important;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(10px, 0, 0);
+  }
+  80% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
