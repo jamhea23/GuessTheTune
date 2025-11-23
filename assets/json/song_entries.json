@@ -287,6 +287,11 @@
         "title": "MAGIC",
          "song_link": "./assets/audio/Magic.mp3",
         "answer_link": "https://youtu.be/l0WArCNh6G0?si=cPbl3l8A6HU-6Uxo"
+    },
+    {
+        "title": "Stay Gold",
+         "song_link": "./assets/audio/Stay Gold.mp3",
+        "answer_link": "https://youtu.be/YVXy5ahojZk?si=xcQkYKHTz85O5oU4"
     }
 
 ]

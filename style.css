@@ -74,12 +74,12 @@ body {
   animation: slideFromLeft 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
-.choiceBtn:hover {
+/* .choiceBtn:hover {
   border: 3px solid #5ca072;
   background-color: var(--choice-border-color);
   color: var(--primary-color);
   box-shadow: #5ca072 0px 6px 0px;
-}
+} */
 
 .choiceBtn:active {
   transform: scale(0.95);
@@ -161,7 +161,7 @@ body {
   color: var(--button-border-color);
   box-shadow: var(--button-border-color) 0px 6px 0px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 

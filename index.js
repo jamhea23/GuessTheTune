@@ -328,7 +328,7 @@ $("#newGameBtn").on("click", resetGame);
 $("#newGameBtn2").on("click", resetGame);
 
 function nextSong(sliceSeconds = 5) {
-  $("#playBtn").html('<i class="fa-solid fa-play"></i> Play Song');
+  $("#playBtn").html('<i class="fa-solid fa-play"></i> Play');
   ensureSongs(function (songs) {
     if (!songs.length) return console.warn("No songs in JSON.");
 
